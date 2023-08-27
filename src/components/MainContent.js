@@ -25,8 +25,12 @@ import {
   secondCard,
   firstCard,
 } from "./AllData";
+import { useTheme } from "@mui/material";
 
 export default function MainContent() {
+  const theme = useTheme();
+  const mdUP = theme.breakpoints.up("md");
+  console.log(mdUP);
   return (
     <div>
       <h2
@@ -61,7 +65,7 @@ export default function MainContent() {
 
       <Grid
         container
-        spacing={14}
+        // spacing={14}
         wrap="nowrap"
         sx={{
           overflowX: "auto",
@@ -69,11 +73,9 @@ export default function MainContent() {
           flexDirection: "row",
 
           paddingBottom: "25px",
-          justifyContent: "space-evenly",
-
           maxWidth: "1400px",
-          width: "100%",
           margin: "auto",
+          // width: mdUP ? "500px" : "120px",
           "@media (max-width: 600px)": {
             maxWidth: "500px",
           },
@@ -83,15 +85,13 @@ export default function MainContent() {
         }}
       >
         {secondCard.map((item) => (
-          <Grid item xs={4} key={item.id}>
-            <Link to={`/item/${item.id}`} style={{ textDecoration: "none" }}>
-              <CardBox
-                title={item.title}
-                imageUrl={item.imageUrl}
-                description={item.description}
-              />
-            </Link>
-          </Grid>
+          <Link to={`/item/${item.id}`} style={{ textDecoration: "none" }}>
+            <CardBox
+              title={item.title}
+              imageUrl={item.imageUrl}
+              description={item.description}
+            />
+          </Link>
         ))}
       </Grid>
 
@@ -185,7 +185,8 @@ export default function MainContent() {
               justifyContent="center"
               display={"flex"}
               item
-              xs={3}
+              xs={12}
+              sm={3}
               key={item.id}
             >
               <Link to={`/item/${item.id}`} style={{ textDecoration: "none" }}>
@@ -283,7 +284,7 @@ export default function MainContent() {
 
       <Grid
         container
-        spacing={1}
+        // spacing={1}
         direction="row"
         justifyContent="space-evenly"
         alignItems="center"
@@ -308,14 +309,14 @@ export default function MainContent() {
         }}
       >
         {smallData.map((item) => (
-          <Grid item xs={3} key={item.id}>
+          <>
             <Link to={`/item/${item.id}`}></Link>
             <CardBoxSmall
               title={item.title}
               imageUrl={item.imageUrl}
               description={item.description}
             />
-          </Grid>
+          </>
         ))}
       </Grid>
 
@@ -415,15 +416,11 @@ export default function MainContent() {
       </h2>
       <Grid
         container
-        spacing={8}
         wrap="wrap"
         justify="center"
         sx={{
-          overflowX: "auto",
           display: "flex",
           flexDirection: "row",
-
-          width: "100%",
           margin: "auto",
           maxWidth: "1400px",
           backgroundColor: "pink",

@@ -15,19 +15,15 @@ export default function CardBoxSmall({ title, description, imageUrl }) {
       alignItems="center"
       sx={{
         height: "auto",
-        width: 300,
         mt: 5,
-        margin: "0px 200px 0 0 ",
+        ml: 2,
       }}
     >
       <Card
         sx={(theme) => ({
-          width: `100%`,
-          maxWidth: "500px",
+          width: `300px`,
           flexDirection: "column",
           overflow: "hidden",
-          
-
           p: 2,
           transition: "transform 0.3s, border 0.3s",
           "&:hover": {
@@ -57,6 +53,7 @@ export default function CardBoxSmall({ title, description, imageUrl }) {
             <FavoriteBorderRoundedIcon color="danger" />
           </IconButton>
         </Box>
+
         <Box
           sx={{
             display: "flex",

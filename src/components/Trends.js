@@ -7,21 +7,18 @@ import Button from "@mui/joy/Button";
 
 export default function Trends({ title, description, imageUrl }) {
   return (
-    <Box sx={{ 
-      minHeight: 540, 
-      mt: 5,
-      margin: "auto",
-      minWidth: "600px"
-
-      
-      }}>
+    <Box
+      sx={{
+        minHeight: 540,
+        mt: 5,
+        margin: "auto",
+        width: "95%",
+      }}
+    >
       <Card
         sx={(theme) => ({
-          width: "100%",
-          maxWidth: "1200px",
           flexDirection: "column",
           overflow: "hidden",
-          
           backgroundColor: "#f7f7f7",
 
           transition: "transform 0.3s, border 0.3s",
@@ -37,7 +34,7 @@ export default function Trends({ title, description, imageUrl }) {
           },
         })}
       >
-        <Box sx={{ position: "relative", height: '70%' }}>
+        <Box sx={{ position: "relative", height: "70%" }}>
           <img
             src={imageUrl}
             alt={title}
@@ -58,13 +55,15 @@ export default function Trends({ title, description, imageUrl }) {
             marginLeft: "20px",
           }}
         >
-          <Typography level="title-lg" sx={{ fontSize: '1.6rem' }}>{title}</Typography>
+          <Typography level="title-lg" sx={{ fontSize: "1.6rem" }}>
+            {title}
+          </Typography>
         </Box>
         <Typography
           level="body-sm"
           sx={{
             mt: 1,
-            fontSize: '0.9rem',  // Increased font size
+            fontSize: "0.9rem", // Increased font size
             textAlign: "left",
             marginLeft: "20px",
             marginBottom: "10px",
@@ -77,10 +76,10 @@ export default function Trends({ title, description, imageUrl }) {
           variant="outlined"
           sx={{
             mt: 2,
-            px: 4,  // Increased padding for the button
+            px: 4, // Increased padding for the button
             py: 2,
             borderRadius: "25px",
-            fontSize: "1.1rem",  // Slightly larger font for the button
+            fontSize: "1.1rem", // Slightly larger font for the button
             margin: "0 0 10px 20px",
             backgroundColor: "black",
             color: "white",

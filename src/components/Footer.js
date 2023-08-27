@@ -16,6 +16,79 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function Footer() {
+  const footerData = [
+    {
+      title: "Department",
+      data: [
+        "Fashion",
+        "Education",
+        "Product",
+        "Frozen Food",
+        "Beverages",
+        "Organic Grocery",
+        "Office Supplies",
+        "Beauty Products",
+        "Books",
+        "Electronics & Gadget",
+        "Travel Accessories",
+        "Fitness",
+        "Sneakers",
+        "Toys",
+        "Furniture",
+      ],
+    },
+    {
+      title: "Department",
+      data: [
+        "Fashion",
+        "Education",
+        "Product",
+        "Frozen Food",
+        "Beverages",
+        "Organic Grocery",
+        "Office Supplies",
+        "Beauty Products",
+        "Books",
+        "Electronics & Gadget",
+        "Travel Accessories",
+        "Fitness",
+        "Sneakers",
+        "Toys",
+        "Furniture",
+      ],
+    },
+  ];
+  // footerData.map((item) => {
+  //   return (
+  //     <>
+  //       <h2>{item.title}</h2>
+  //       {item.data.map((itm) => (
+  //         <li key={item}>
+  //           <Link
+  //             to={`/${item.toLowerCase().replace(/ /g, "-")}`}
+  //             sx={{
+  //               fontSize: "16px",
+  //               textAlign: "left",
+  //               fontFamily: "Inter, sans-serif",
+  //               fontWeight: "700",
+  //               color: `black`,
+  //               textDecoration: "none",
+  //               display: "block",
+  //               transition: "transform 0.3s ease",
+  //               "&:hover": {
+  //                 color: "red",
+  //                 textDecoration: "none",
+  //                 transform: "translateX(30px)",
+  //               },
+  //             }}
+  //           >
+  //             {item}
+  //           </Link>
+  //         </li>
+  //       ))}
+  //     </>
+  //   );
+  // });
   return (
     <div
       style={{
@@ -77,7 +150,7 @@ export default function Footer() {
             <li key={item}>
               <Link
                 to={`/${item.toLowerCase().replace(/ /g, "-")}`}
-                sx={{
+                style={{
                   fontSize: "16px",
                   textAlign: "left",
                   fontFamily: "Inter, sans-serif",
@@ -254,11 +327,10 @@ export default function Footer() {
             <li key={item}>
               <Link
                 to={`/${item.toLowerCase().replace(/ /g, "-")}`}
-                style={{ textDecoration: "none" }}
-                sx={{
+                style={{
+                  textDecoration: "none",
                   fontSize: "16px",
                   textAlign: "left",
-                  textDecoration: "none",
                   fontFamily: "Eina02, sans-serif",
                   fontWeight: "700",
                   color: `black`,
@@ -312,21 +384,21 @@ export default function Footer() {
               src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63eb0ed6e927bdf5bc4309e0_briefcase.svg"
               alt=""
             />
-            <Item>Become Seller</Item>
+            <Item elevation={0}>Become Seller</Item>
           </div>
           <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
             <img
               src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63eb0ed6c4510c256356f4cd_gift.svg"
               alt=""
             />
-            <Item>Gift Cards</Item>
+            <Item elevation={0}>Gift Cards</Item>
           </div>
           <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
             <img
               src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63eb0ed6ae57fd74e0402aa4_help-circle.svg"
               alt=""
             />
-            <Item>Help Center</Item>
+            Help Center
           </div>
         </div>
         <div
@@ -336,8 +408,8 @@ export default function Footer() {
             backgroundColor: "transparent",
           }}
         >
-          <Item>Terms of Service</Item>
-          <Item>Privacy & Policy</Item>
+          <Item elevation={0}>Terms of Service</Item>
+          <Item elevation={0}>Privacy & Policy</Item>
         </div>
         <p>All Right reserved by Musemind | 2023</p>
       </Stack>
